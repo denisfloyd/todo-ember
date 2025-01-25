@@ -1,0 +1,9 @@
+<ul class="todo-list">
+  {{#each @todos as |todo|}}
+  <li>
+    <input type="checkbox" checked={{todo.isCompleted}} {{on "change" (fn this.toggleComplete todo)}} />
+    <span class={{if todo.isCompleted "line-through" }}>{{todo.todo}}</span>
+    <button type="button" {{on "click" (fn this.removeTodo todo)}}>Delete</button>
+  </li>
+  {{/each}}
+</ul>

@@ -6,7 +6,14 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     'ember-cli-babel': { enableTypeScriptTransform: true },
 
-    // Add options here
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ['postcss-loader'],
+        },
+      ],
+    },
   });
 
   return app.toTree();

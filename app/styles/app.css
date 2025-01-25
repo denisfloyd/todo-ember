@@ -1,1 +1,108 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+body {
+  font-size: 1rem;
+  background-color: #000a1e;
+  color: #fffffa;
+}
+
+/**
+ * Top Navigation
+ */
+
+.menu {
+  height: 3em;
+  background-color: #0749ab;
+}
+
+.menu h1 {
+  position: relative;
+  padding: 5px 0 0 8px;
+  color: #fffffa;
+  font-size: 1.8em;
+}
+
+.menu a,
+.menu .links {
+  display: inline-block;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a:hover,
+.menu a.active {
+  opacity: 1;
+}
+
+.menu .links {
+  padding: 0 21px;
+}
+
+.menu .links a {
+  position: relative;
+  bottom: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  color: #fffffa;
+  text-align: center;
+
+  form {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.todo-input {
+  background-color: #b3d2ff;
+  border: 1px solid #fffffa;
+  padding: 0.5rem;
+  outline: 0;
+}
+
+.todo-list {
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    span.line-through {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.button {
+  border: 1px solid #fffffa;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #fffffa;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #0749ab;
+  }
+}

@@ -1,0 +1,6 @@
+<form {{on "submit" (fn this.addTodo)}}>
+  <input type="text" class="todo-input" value={{this.text}} {{on "input" this.onChange}} />
+  <button class="button" type="submit">
+    Add Todo
+  </button>
+</form>
