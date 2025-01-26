@@ -6,13 +6,10 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     'ember-cli-babel': { enableTypeScriptTransform: true },
 
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: ['postcss-loader'],
-        },
-      ],
+    postcssOptions: {
+      compile: {
+        plugins: [require('@tailwindcss/postcss'), require('autoprefixer')],
+      },
     },
   });
 

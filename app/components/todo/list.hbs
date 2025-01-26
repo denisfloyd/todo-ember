@@ -1,9 +1,19 @@
 <ul class="todo-list">
   {{#each @todos as |todo|}}
   <li>
-    <input type="checkbox" checked={{todo.isCompleted}} {{on "change" (fn this.toggleComplete todo)}} />
-    <span class={{if todo.isCompleted "line-through" }}>{{todo.todo}}</span>
-    <button type="button" {{on "click" (fn this.removeTodo todo)}}>Delete</button>
+    {{!-- Accessible Label for the Checkbox --}}
+    <label class="flex items-center gap-2">
+      <input type="checkbox" checked={{todo.isCompleted}} {{on "change" (fn this.toggleComplete todo)}} />
+      <span class={{if todo.isCompleted "line-through" "font-normal" }}>
+        {{todo.todo}}
+      </span>
+      </label>
+
+      {{!-- Accessible Delete Button --}}
+      <button type="button" aria-label={{concat "Delete todo: " todo.todo}} class="ml-4" {{on "click" (fn this.removeTodo
+        todo)}}>
+        Delete
+      </button>
   </li>
   {{/each}}
 </ul>
