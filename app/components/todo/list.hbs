@@ -5,12 +5,12 @@
     <label class="flex items-center gap-2">
       <input type="checkbox" checked={{todo.isCompleted}} {{on "change" (fn this.toggleComplete todo)}} />
       <span class={{if todo.isCompleted "line-through" "font-normal" }}>
-        {{todo.todo}}
+        {{todo.title}}
       </span>
       </label>
 
       {{!-- Accessible Delete Button --}}
-      <button type="button" aria-label={{concat "Delete todo: " todo.todo}} class="ml-4" {{on "click" (fn this.removeTodo
+      <button type="button" aria-label={{concat "Delete todo: " todo.title}} class="ml-4" {{on "click" (fn this.removeTodo
         todo)}}>
         Delete
       </button>

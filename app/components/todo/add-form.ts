@@ -17,7 +17,7 @@ export default class TodoAddForm extends Component {
     }
 
     this.store.createRecord('todo', {
-      todo: this.text,
+      title: this.text,
       isCompleted: false,
     });
 
